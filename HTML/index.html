@@ -3,77 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <title>News Application</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <title>News App</title>
 </head>
 <body>
-
-    <!-- Navigation Menu -->
-    <nav>
-        <div class="logo">
-            <img class="navImg" src="../ASSETS/full_coverage_24dp_WHITE_FILL0_wght400_GRAD0_opsz24.svg" alt="news_logo"/>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="create-news.html">Create News</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-    </nav>
-
-    <!-- Main Content -->
-    <div class="main-container">
-        <!-- News Portal Heading -->
-        <h5 class="heading">Latest News</h5>
-
-        <!-- News Slider Wrapper -->
-        <div class="slider-container">
-            <div id="news_slider" class="news-slider">
-                <!-- Dynamic content from JavaScript will be injected here -->
-            </div>
-            <!-- Slider Controls -->
-            <button class="prev-btn" id="prev-slider-btn">❮</button> 
-            <button class="next-btn" id="next-slider-btn">❯</button>
-        </div>
-
-        <!-- Pagination Section -->
-        <div class="pagination" id="pagination">
-            <button id="prev-page-btn" disabled>Back</button>
-            <span class="page-info"></span>
-            <button id="next-page-btn">Next</button>
-        </div>
-    </div>
-    <!-- Create News Form -->
-<div class="create-news-container">
-    <h5>Create News</h5>
-    <form id="create-news-form">
-        <label for="news-title">Title:</label>
-        <input type="text" id="news-title" required>
-        
-        <label for="news-author">Author:</label>
-        <input type="text" id="news-author" required>
-        
-        <label for="news-avatar">Avatar URL:</label>
-        <input type="url" id="news-avatar" required>
-        
-        <button type="submit">Submit News</button>
-    </form>
-</div>
-
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; News Application. All Rights Reserved.</p>
-            <ul class="footer-links">
+    <header>
+        <nav>
+            <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="create-news.html">Create News</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="about.html">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>News Articles</h1>
+        <section id="news-list" class="news-container"></section>
+        
+        <div class="pagination">
+            <button id="prev">Back</button>
+            <span id="current-page" class="current-page">Page 1 of X</span>
+            <button id="next">Next</button>
         </div>
+    </main>
+
+    <footer>
+        <div>Include footer here</div>
     </footer>
-    <script src="../JAVASCRIPT/script.js"></script>
+
+    <script src="../JAVASCRIPT/app.js"></script>
 </body>
 </html>
