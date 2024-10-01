@@ -4,46 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>News Application</title>
 </head>
 <body>
 
-    <!--This is the Navigation menu-->
+    <!-- Navigation Menu -->
     <nav>
         <div class="logo">
-          <a href="index.html">LOGO</a>
+            <img class="navImg" src="../ASSETS/full_coverage_24dp_WHITE_FILL0_wght400_GRAD0_opsz24.svg" alt="news_logo"/>
         </div>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="create-news.html">Create News</a></li>
-          <li><a href="#">Contact Us</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="create-news.html">Create News</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
         </ul>
-      </nav>
+    </nav>
 
-      <!-- This is the main content -->
-  <div class="main-container">
-    <!-- News Portal Heading -->
-    <h1 class="heading">News Portal</h1>
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- News Portal Heading -->
+        <h5 class="heading">Latest News</h5>
 
-    <!-- These are my news cards grid -->
-    <div class="news-cards-container">
-      <div class="news-card">News Card 1</div>
-      <div class="news-card">News Card 2</div>
-      <div class="news-card">News Card 3</div>
-      <div class="news-card">News Card 4</div>
-      <div class="news-card">News Card 5</div>
-      <div class="news-card">News Card 6</div>
-      <div class="news-card">News Card 7</div>
-      <div class="news-card">News Card 8</div>
+        <!-- News Slider Wrapper -->
+        <div class="slider-container">
+            <div id="news_slider" class="news-slider">
+                <!-- Dynamic content from JavaScript will be injected here -->
+            </div>
+            <!-- Slider Controls -->
+            <button class="prev-btn" id="prev-slider-btn">❮</button> 
+            <button class="next-btn" id="next-slider-btn">❯</button>
+        </div>
+
+        <!-- Pagination Section -->
+        <div class="pagination" id="pagination">
+            <button id="prev-page-btn" disabled>Back</button>
+            <span class="page-info"></span>
+            <button id="next-page-btn">Next</button>
+        </div>
     </div>
+    <!-- Create News Form -->
+<div class="create-news-container">
+    <h5>Create News</h5>
+    <form id="create-news-form">
+        <label for="news-title">Title:</label>
+        <input type="text" id="news-title" required>
+        
+        <label for="news-author">Author:</label>
+        <input type="text" id="news-author" required>
+        
+        <label for="news-avatar">Avatar URL:</label>
+        <input type="url" id="news-avatar" required>
+        
+        <button type="submit">Submit News</button>
+    </form>
+</div>
 
-    <!-- The pagination -->
-    <div class="pagination">
-      <button class="back-btn">Back</button>
-      <span class="page-info">Page X of Y</span>
-      <button class="next-btn">Next</button>
-    </div>
-  </div>
-<script src="script.js"></script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; News Application. All Rights Reserved.</p>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="create-news.html">Create News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="../JAVASCRIPT/script.js"></script>
 </body>
 </html>

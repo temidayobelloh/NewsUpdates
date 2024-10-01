@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #F0F2F5; /* Soft light gray for the background */
+}
+
+nav {
+    background-color: #343A40; /* Muted dark tone for the nav */
+    color: white;
+    height: 50px;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for nav */
+}
+
+nav .logo a {
+    text-decoration: none;
+    font-size: 24px;
+    color: #28A745;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #28A745; /* Light gray on hover */
+}
+img{
+    cursor: pointer;
+    width: 30px;
+    margin-left: 50px;
+  }
+.contact-container {
+    padding: 40px; /* Increased padding for a more spacious layout */
+    max-width: 600px;
+    margin: 40px auto; /* Added margin-top for spacing from the nav */
+    border: 1px solid #ddd;
+    border-radius: 10px; /* More rounded corners */
+    background-color: white; /* White background for the contact container */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
+}
+
+.contact-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #28A745; /* Emerald green for the heading */
+    font-size: 20px; /* Larger heading size */
+    font-weight: 600; /* Bold weight for emphasis */
+}
+
+.contact-container p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #666; /* Soft gray for the paragraph text */
+    font-size: 16px; /* Consistent font size */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 5px;
+    color: #666; /* Soft gray for labels */
+    font-size: 16px; /* Increased font size for clarity */
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 20px; /* Increased margin for better spacing */
+    padding: 12px; /* More padding for comfort */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease; /* Smooth transition on focus */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #28A745; /* Emerald green border on focus */
+    outline: none; /* Remove default outline */
+}
+
+.contact-form .submit-btn {
+    background-color: #28A745; /* Match the nav background */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /* Increased font size for button */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.contact-form .submit-btn:hover {
+    background-color: #555; /* Darker gray on hover */
+}
+
+.footer {
+    background-color: #343A40; /* Match nav background */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-links {
+    list-style-type: none;
+    display: flex;
+}
+
+.footer-links li {
+    margin-left: 20px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #28A745; 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        width: 100%;
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+}
