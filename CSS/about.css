@@ -1,0 +1,116 @@
+
+/* Component Styles */
+.about-section,
+.features-section,
+.team-section {
+    text-align: left;
+    padding: 60px 30px; /* Increased padding for better spacing */
+    background-color: #ffffff; /* Keep the background white for cleanliness */
+    max-width: 900px;
+    margin: 50px auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+    border-radius: 15px; /* Rounded corners for a modern look */
+}
+
+/* Headings Styles */
+.about-section h1,
+.features-section h2,
+.team-section h2 {
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat for headings */
+    font-size: 27px; /* Reduced font size */
+    color: #333;
+    margin-bottom: 20px; /* More spacing below headings */
+    letter-spacing: 0.5px; /* Slight letter spacing for a polished look */
+    text-align: left;
+    margin-left: 85px;
+    font-weight: 700;
+}
+
+/* Content Styles */
+.about-content p,
+.features-list li {
+    font-size: 15px; /* Reduced font size for better readability */
+    color: #555;
+    margin-bottom: 15px; /* Decreased spacing for readability */
+    line-height: 1.6; /* Improved line-height for clarity */
+    padding: 0 15px; /* Indentation for better spacing */
+    margin-left: 45px;
+}
+
+/* Features List */
+.features-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.features-list li {
+    margin-bottom: 10px; /* More spacing for features */
+    position: relative; /* Position for pseudo-element effect */
+}
+
+.features-list li:before {
+    content: '✔'; /* Custom bullet point */
+    color: #28a745; /* Match with button color */
+    position: absolute;
+    left: -5px; /* Adjust position */
+    font-size: 1.2rem; /* Slightly larger bullet */
+}
+
+/* Back to Home Button Styles */
+#back-home {
+    padding: 10px 20px; /* Adjusted padding */
+    background-color: #28a745; /* Emerald green */
+    color: white;
+    font-size: 0.9rem; /* Reduced font size */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 165px; 
+    margin-bottom: 100px; /* More margin for balance */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+#back-home:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Our Team Section Styles */
+.team-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px; /* Increased spacing */
+    flex-wrap: wrap; /* Responsive wrapping */
+}
+
+.team-member {
+    text-align: center;
+    width: 30%;
+    margin-bottom: 30px; /* Added margin for mobile responsiveness */
+    transition: transform 0.3s; /* Smooth scaling effect */
+}
+
+.team-member:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+.team-member img {
+    width: 120px; /* Reduced image size */
+    height: 120px; /* Reduced image size */
+    border-radius: 50%;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2); /* Added shadow for images */
+}
+
+.team-member h3 {
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat for member names */
+    font-size: 1.1rem; /* Reduced font size */
+    color: #333;
+    margin-top: 10px; /* Spacing above the name */
+}
+
+.team-member p {
+    font-size: 0.9rem; /* Reduced font size */
+    color: #777;
+    margin-top: 5px; /* Spacing above the role */
+}

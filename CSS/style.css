@@ -2,12 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins";
 }
 
 /* Body styling */
 body {
-  background-color: #f0f2f5; /* Softer background color */
+  background-color: #F0F2F5; /* Softer background color */
   color: #333; /* Darker text for better readability */
   line-height: 1.6;
   padding: 0 20px;
@@ -15,7 +15,8 @@ body {
 
 /* Navigation styles */
 nav {
-  background-color: #007BFF; /* Blue background */
+  background-color: #343A40; /* Dark background */
+  color: white;
   padding: 15px;
   margin-bottom: 20px;
 }
@@ -31,7 +32,7 @@ nav ul li {
 }
 
 nav a {
-  color: white;
+  color: white; /* Emerald green */
   font-size: 1.1em;
   font-weight: bold;
   text-decoration: none;
@@ -39,7 +40,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #ddd;
+  color: #28A745; /* Light gray on hover */
 }
 
 /* News container styling */
@@ -54,7 +55,7 @@ nav a:hover {
 
 /* Individual news item styling */
 .news-item {
-  background-color: #fff;
+  background-color: white; /* White background for news items */
   border: 1px solid #ddd;
   border-radius: 8px;
   width: calc(33.333% - 20px); /* Make cards take equal space */
@@ -75,9 +76,8 @@ nav a:hover {
   height: 200px;
   object-fit: cover; /* Keep images looking sharp */
   border-radius: 8px 8px 0 0; /* Rounded corners for the top */
-  padding:20px; /* Add some padding around the image */
-  box-sizing: border-box; /* Ensure padding is included in width/height */
 }
+
 /* Title styling for news items */
 .news-item h4 {
   font-size: 20px;
@@ -96,8 +96,8 @@ nav a:hover {
 
 .news-item a {
   display: block;
-  background-color: #007BFF;
-  color: #fff;
+  background-color: #28A745; /* Emerald green for buttons */
+  color: white;
   padding: 10px;
   text-align: center;
   text-decoration: none;
@@ -108,7 +108,7 @@ nav a:hover {
 }
 
 .news-item a:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Darker blue on hover */
 }
 
 /* Pagination styling */
@@ -122,8 +122,8 @@ nav a:hover {
 .pagination button {
   padding: 10px 20px;
   margin: 0 10px;
-  background-color: #007BFF;
-  color: #fff;
+  background-color: #28A745; /* Match the button color */
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -131,7 +131,7 @@ nav a:hover {
 }
 
 .pagination button:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Darker blue on hover */
 }
 
 .pagination span {
@@ -143,12 +143,12 @@ nav a:hover {
 /* Responsive Design */
 @media (max-width: 1024px) {
   .news-item {
-    width: calc(50% - 20px); /* Adjust for medium screens */
+      width: calc(50% - 20px); /* Adjust for medium screens */
   }
 }
 
 @media (max-width: 768px) {
   .news-item {
-    width: 100%; /* Full width on smaller screens */
+      width: 100%; /* Full width on smaller screens */
   }
 }
