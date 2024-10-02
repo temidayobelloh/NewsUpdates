@@ -1,63 +1,51 @@
-document.getElementById('create-news-form').addEventListener('submit', async function (event) {
-    event.preventDefault(); // Prevent the default form submission
+// Function to create news article
+async function createNews(title, author, avatarFile, content, imageUrl) {
+    const newsData = new FormData();
+    newsData.append('title', title);
+    newsData.append('author', author);
+    newsData.append('content', content);
+    newsData.append('imageUrl', imageUrl);
+    newsData.append('avatar', avatarFile); // Append the file directly
 
-    // Get form data
-    const title = document.getElementById('title').value.trim();
-    const author = document.getElementById('author').value.trim();
-    const content = document.getElementById('content').value.trim();
-    const imageUrl = document.getElementById('imageUrl').value.trim();
-
-    // Handle avatar upload (Convert to base64 for API request)
-    const avatarInput = document.getElementById('avatar');
-    const avatarFile = avatarInput.files[0];
-
-    if (!avatarFile) {
-        alert("Please upload an avatar.");
-        return; // Exit if no avatar file is selected
-    }
-
-    const avatarBase64 = await convertToBase64(avatarFile);
-    createNews(title, author, avatarBase64, content, imageUrl);
-});
-
-// Function to convert file to base64
-function convertToBase64(file) {
-    return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onloadend = () => resolve(reader.result);
-        reader.onerror = (error) => reject(error);
-        reader.readAsDataURL(file);
-    });
-}
-
-// Function to create news and send to the API
-async function createNews(title, author, avatar, content, imageUrl) {
-    const newsData = {
-        title,
-        author,
-        avatar,
-        content,
-        imageUrl
-    };
+    const feedback = document.getElementById('feedback');
+    feedback.innerHTML = '';
+    feedback.style.display = 'none';
 
     try {
         const response = await fetch('https://61924d4daeab5c0017105f1a.mockapi.io/skaet/v1/news', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(newsData),
+            body: newsData, // Use FormData as the body
         });
 
         if (response.ok) {
             const result = await response.json();
-            // Redirect to the news details page with the newly created news ID
-            window.location.href = `news-details.html?id=${result.id}`;
+            feedback.innerHTML = 'News article created successfully!';
+            feedback.style.display = 'block';
+            alert('News Article successfully published');
         } else {
-            alert("Failed to create news. Please try again.");
+            feedback.innerHTML = 'Failed to create news. Please try again.';
+            feedback.style.display = 'block';
         }
     } catch (error) {
-        console.error("Error:", error);
-        alert("An error occurred. Please try again.");
+        feedback.innerHTML = 'An error occurred. Please try again later.';
+        feedback.style.display = 'block';
     }
+}
+
+// Function to handle form submission
+function handleSubmit(event) {
+    event.preventDefault();
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+    const avatarFile = document.getElementById('avatar').files[0]; // Get the file
+    const content = document.getElementById('content').value;
+    const imageUrl = document.getElementById('imageUrl').value;
+
+    createNews(title, author, avatarFile, content, imageUrl); // Pass the file
+}
+
+// Add event listener to the form
+const newsForm = document.getElementById('news-form');
+if (newsForm) {
+    newsForm.addEventListener('submit', handleSubmit);
 }

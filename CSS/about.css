@@ -4,113 +4,114 @@
 .features-section,
 .team-section {
     text-align: left;
-    padding: 60px 30px; /* Increased padding for better spacing */
-    background-color: #ffffff; /* Keep the background white for cleanliness */
+    padding: 40px 20px;
+    background-color: #ffffff;
     max-width: 900px;
     margin: 50px auto;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
-    border-radius: 15px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    border-radius: 15px; 
 }
 
 /* Headings Styles */
 .about-section h1,
 .features-section h2,
 .team-section h2 {
-    font-family: 'Montserrat', sans-serif; /* Use Montserrat for headings */
-    font-size: 27px; /* Reduced font size */
-    color: #333;
-    margin-bottom: 20px; /* More spacing below headings */
-    letter-spacing: 0.5px; /* Slight letter spacing for a polished look */
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 25px; 
+    color: #28a745;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px; 
     text-align: left;
-    margin-left: 85px;
+    margin-left: 60px;
     font-weight: 700;
 }
 
-/* Content Styles */
+
 .about-content p,
 .features-list li {
-    font-size: 15px; /* Reduced font size for better readability */
+    font-size: 16px; 
     color: #555;
-    margin-bottom: 15px; /* Decreased spacing for readability */
-    line-height: 1.6; /* Improved line-height for clarity */
-    padding: 0 15px; /* Indentation for better spacing */
+    margin-bottom: 15px; 
+    line-height: 1.6; 
+    padding: 0 15px; 
     margin-left: 45px;
 }
 
-/* Features List */
 .features-list {
     list-style-type: none;
     padding: 0;
 }
 
 .features-list li {
-    margin-bottom: 10px; /* More spacing for features */
-    position: relative; /* Position for pseudo-element effect */
+    margin-bottom: 10px; 
+    position: relative; 
 }
 
 .features-list li:before {
-    content: '✔'; /* Custom bullet point */
-    color: #28a745; /* Match with button color */
+    content: '✔'; 
+    color: #28a745; 
     position: absolute;
-    left: -5px; /* Adjust position */
-    font-size: 1.2rem; /* Slightly larger bullet */
+    left: -5px; 
+    font-size: 1.2rem; 
 }
 
-/* Back to Home Button Styles */
 #back-home {
-    padding: 10px 20px; /* Adjusted padding */
-    background-color: #28a745; /* Emerald green */
+    padding: 10px 20px; 
+    background-color: #28a745; 
     color: white;
-    font-size: 0.9rem; /* Reduced font size */
+    font-size: 0.9rem; 
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 165px; 
-    margin-bottom: 100px; /* More margin for balance */
-    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    margin-left: 205px; 
+    margin-bottom: 100px; 
+    transition: background-color 0.3s, transform 0.3s; 
 }
 
 #back-home:hover {
-    background-color: #218838; /* Darker green on hover */
-    transform: translateY(-2px); /* Lift effect on hover */
+    background-color: #218838; 
+    transform: translateY(-2px); 
 }
 
-/* Our Team Section Styles */
+
 .team-container {
     display: flex;
     justify-content: space-around;
-    margin-top: 40px; /* Increased spacing */
-    flex-wrap: wrap; /* Responsive wrapping */
+    margin-top: 40px; 
+    flex-wrap: wrap; 
 }
 
 .team-member {
     text-align: center;
     width: 30%;
-    margin-bottom: 30px; /* Added margin for mobile responsiveness */
-    transition: transform 0.3s; /* Smooth scaling effect */
+    margin-bottom: 30px; 
+    transition: transform 0.3s;
 }
 
 .team-member:hover {
-    transform: scale(1.05); /* Scale up on hover */
+    transform: scale(1.05); 
 }
 
 .team-member img {
-    width: 120px; /* Reduced image size */
-    height: 120px; /* Reduced image size */
+    width: 80px; 
+    height: 80px;
     border-radius: 50%;
     margin-bottom: 15px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2); /* Added shadow for images */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2); 
 }
 
 .team-member h3 {
-    font-family: 'Montserrat', sans-serif; /* Use Montserrat for member names */
-    font-size: 1.1rem; /* Reduced font size */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem; 
     color: #333;
-    margin-top: 10px; /* Spacing above the name */
+    margin-top: 10px; 
 }
 
 .team-member p {
-    font-size: 0.9rem; /* Reduced font size */
+    font-size: 0.9rem; 
     color: #777;
-    margin-top: 5px; /* Spacing above the role */
+    margin-top: 5px; 
 }
+
+
+
