@@ -148,14 +148,15 @@
     .about-section,
     .features-section,
     .team-section {
-        padding: 20px 5px;
+        margin-top: 0;
+        padding: 10px 19px;
     }
 
     .about-section h1,
     .features-section h2,
     .team-section h2 {
-        font-size: 20px; 
-        margin-left: 10px;
+        font-size: 14px; 
+        margin-left: 30px;
     }
 
     .about-content p,
@@ -165,21 +166,23 @@
     }
 
     #back-home {
-        font-size: 0.8rem; 
-        padding: 8px 15px; 
+        width: 140px;
+        text-align: left;
+        font-size: 11px; 
+        padding: 12px 10px; 
         margin-bottom: 20px; 
     }
 
     .team-member {
-        width: 90%; 
+        width: 27%; 
         margin: 0 auto 20px; 
     }
 
     .team-member h3 {
-        font-size: 1rem; 
+        font-size: 13px; 
     }
 
     .team-member p {
-        font-size: 0.8rem; 
+        font-size: 9px; 
     }
 }

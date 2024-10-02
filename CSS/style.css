@@ -325,17 +325,19 @@ nav a:hover {
 /* Media query for screens up to 390px */
 @media (max-width: 390px) {
   nav {
-    padding: 8px;
+    padding: 2px;
   }
 
   nav ul li {
-    display: block;
+    display: inline;
     margin-bottom: 10px;
-    font-size: 12px;
+    font-size: 9px;
   }
-
+.heading{
+  font-size: 15px;
+}
   .hero-content h1 {
-    font-size: 20px;
+    font-size: 14px;
     margin-left: 0;
     text-align: center;
   }
@@ -347,17 +349,18 @@ nav a:hover {
   }
 
   .cta-button {
-    padding: 8px 15px;
-    font-size: 12px;
+    padding: 7px;
+    font-size: 11px;
     text-align: center;
+    margin-left: -200px;
   }
 
   .news-item {
-    flex: 1 1 100%; 
+    flex: 5 3 47%; 
   }
 
   .news-item h4 {
-    font-size: 14px;
+    font-size: 12px;
     padding: 0 10px; 
   }
 
@@ -371,19 +374,49 @@ nav a:hover {
     font-size: 12px; 
     margin: 8px 0; 
   }
+  /* Pagination styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.pagination button {
+  padding: 10px ;
+  margin: 0 10px;
+  background-color: #28A745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #1d8335;
+}
+
+.pagination span {
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+}
 
   .footer-links a {
     flex-direction: row;
     align-items: center;
-    gap: 8px;
+    gap: 7px;
   }
 
   .footer-links li a {
-    font-size: 12px;
+    font-size: 9px;
   }
 
   .footer-content p {
-    font-size: 10px;
+    font-size: 9px;
     text-align: center;
   }
 }
