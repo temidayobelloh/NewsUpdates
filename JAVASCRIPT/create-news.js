@@ -1,4 +1,4 @@
-// Function to create news article
+// A function to create news article
 async function createNews(title, author, avatarFile, content, imageUrl) {
     const newsData = new FormData();
     newsData.append('title', title);
@@ -14,7 +14,7 @@ async function createNews(title, author, avatarFile, content, imageUrl) {
     try {
         const response = await fetch('https://61924d4daeab5c0017105f1a.mockapi.io/skaet/v1/news', {
             method: 'POST',
-            body: newsData, // Use FormData as the body
+            body: newsData, 
         });
 
         if (response.ok) {
@@ -37,7 +37,7 @@ function handleSubmit(event) {
     event.preventDefault();
     const title = document.getElementById('title').value;
     const author = document.getElementById('author').value;
-    const avatarFile = document.getElementById('avatar').files[0]; // Get the file
+    const avatarFile = document.getElementById('avatar').files[0]; 
     const content = document.getElementById('content').value;
     const imageUrl = document.getElementById('imageUrl').value;
 

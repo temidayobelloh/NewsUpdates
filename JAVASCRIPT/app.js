@@ -3,7 +3,7 @@ const currentPageElement = document.getElementById("current-page");
 let currentPage = 1;
 let totalPages = 1;  // Will be updated after fetching data
 
-// Function to fetch news from the API
+// Function to fetch news from my API
 async function fetchNews(page) {
     try {
         const response = await fetch(`https://61924d4daeab5c0017105f1a.mockapi.io/skaet/v1/news?page=${page}&limit=10`);
@@ -14,12 +14,12 @@ async function fetchNews(page) {
 
         const news = await response.json();
         
-        // Assuming the API returns total number of items in the 'X-Total-Count' header
-        const totalItems = response.headers.get('X-Total-Count') || 170; // Default to 170 if not available
-        totalPages = Math.ceil(totalItems / 10); // Assuming 10 items per page
+        
+        const totalItems = response.headers.get('X-Total-Count') || 170;
+        totalPages = Math.ceil(totalItems / 10); 
         
         displayNews(news);
-        updateCurrentPage(page, totalPages); // Update current page and total pages display
+        updateCurrentPage(page, totalPages); 
     } catch (error) {
         console.error("Error fetching news:", error);
     }
@@ -45,12 +45,12 @@ function displayNews(news) {
     });
 }
 
-// Function to update the current page number in pagination
+// A function to update the current page number in pagination
 function updateCurrentPage(page, totalPages) {
     currentPageElement.textContent = `Page ${page} of ${totalPages}`; // Update the span text
 }
 
-// Function to handle the "Next" button click for pagination
+// A function to handle the "Next" button click for pagination
 function handleNextPage() {
     if (currentPage < totalPages) {
         currentPage++;
@@ -58,7 +58,7 @@ function handleNextPage() {
     }
 }
 
-// Function to handle the "Previous" button click for pagination
+// A function to handle the "Previous" button click for pagination
 function handlePrevPage() {
     if (currentPage > 1) {
         currentPage--;
@@ -66,9 +66,9 @@ function handlePrevPage() {
     }
 }
 
-// Event listeners for pagination buttons
+// Added Event listeners for pagination buttons
 document.getElementById("next").addEventListener("click", handleNextPage);
 document.getElementById("prev").addEventListener("click", handlePrevPage);
 
-// Initial fetch to load the first page of news
+// Initial 
 fetchNews(currentPage);

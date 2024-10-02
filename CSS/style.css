@@ -30,8 +30,8 @@ nav {
 nav ul {
   list-style: none;
   text-align: center;
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
+  margin: 0; 
+  padding: 0; 
 }
 
 nav ul li {
@@ -48,10 +48,8 @@ nav a {
 }
 
 nav a:hover {
-  color: #28A745; /* Green accent on hover */
+  color: #28A745;
 }
-
-
 
 .heading{
   margin-left: 105px;
@@ -59,9 +57,8 @@ nav a:hover {
   padding-bottom: 20px;
 }
 .hero-section {
-  background-color: #28a745;
   color: black;
-  padding: 80px 20px;
+  padding-top: 2px;
   text-align: center;
   position: relative;
   border-radius: 15px;
@@ -75,6 +72,7 @@ nav a:hover {
   margin-bottom: 0px;
   margin-left: -400px;
   margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 .hero-content p {
@@ -85,17 +83,19 @@ nav a:hover {
   margin-left: auto;
   margin-right: auto;
   text-align: left;
+  margin-bottom: 20px;
+  font-weight: 400;
 }
 
 .cta-button {
   display: inline-block;
   background-color:#28a745;
   color: white;
-  padding: 12px 25px;
+  padding: 13px 25px;
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: background-color 0.3s, transform 0.3s;
   margin-top: 10px;
   margin-left: -650px;
@@ -108,7 +108,7 @@ nav a:hover {
 
 }
 
-/* News container styling */
+/* News container stylez*/
 .news-container {
   display: flex;
   flex-wrap: wrap;
@@ -181,7 +181,7 @@ nav a:hover {
   background-color: #1d8335;
 }
 
-/* Pagination styling */
+/* Pagination styles */
 .pagination {
   display: flex;
   justify-content: center;
@@ -193,7 +193,7 @@ nav a:hover {
 .pagination button {
   padding: 10px 20px;
   margin: 0 10px;
-  background-color: #28A745; /* Match the button color */
+  background-color: #28A745; 
   color: white;
   border: none;
   border-radius: 5px;

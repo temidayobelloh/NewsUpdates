@@ -80,13 +80,13 @@ form button:hover {
   background-color: #218838;
 }
 .success-message {
-  background-color: #d4edda; /* Light green background */
-  color: #155724; /* Dark green text */
+  background-color: #d4edda;
+  color: #155724; 
   padding: 15px;
   border-radius: 5px;
   margin-top: 20px;
   text-align: center;
-  display: none; /* Hidden by default */
+  display: none; 
 }
 
 .error-message {
