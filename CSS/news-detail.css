@@ -4,8 +4,6 @@
     box-sizing: border-box;
 }
 
-
-
 .main-container {
     padding: 20px;
     max-width: 1000px;
@@ -34,11 +32,9 @@
     padding: 15px; 
     line-height: 1.6;
     text-align: left;
-    width: 900px;
+    max-width: 900px; /* Updated to max-width for better responsiveness */
     font-weight: 500;
-    height: 130px;
 }
-
 
 .slider {
     position: relative;
@@ -53,7 +49,7 @@
 }
 
 .news-card {
-    min-width: 330px; /* Minimum width for each card */
+    min-width: 300px; /* Adjusted for better responsiveness */
     margin: 10px;
     background-color: white;
     border-radius: 10px;
@@ -62,8 +58,7 @@
     height: 350px;
     display: flex;
     flex-direction: column; 
-    padding: 30px; 
-    box-sizing: border-box; 
+    padding: 20px; /* Adjusted padding */
 }
 
 .news-card h3 {
@@ -77,7 +72,6 @@
     line-height: 1.5; 
 }
 
-
 .slider-button {
     position: absolute;
     top: 50%;
@@ -85,7 +79,7 @@
     background-color: black; 
     color: white; 
     border: 1px solid black; 
-    padding: 9px; 
+    padding: 10px; /* Adjusted padding */
     cursor: pointer;
     font-size: 24px;
     transition: color 0.3s; 
@@ -96,7 +90,6 @@
     color: #28a745; /* Change color on hover */
 }
 
-
 #prevButton {
     left: 10px;
 }
@@ -104,6 +97,7 @@
 #nextButton {
     right: 10px;
 }
+
 .singleNewsContainer {
     max-width: 800px;
     margin: 20px auto;
@@ -112,7 +106,6 @@
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden; 
-    box-sizing: border-box; 
 }
 
 .singleNewsContainer #newsTitle {
@@ -139,7 +132,7 @@
 
 .singleNewsContainer #commentSection {
     margin-bottom: 20px;
-    font: 14px;
+    font-size: 14px;
 }
 
 .singleNewsContainer .comment {
@@ -148,12 +141,11 @@
     border-radius: 4px;
     margin-bottom: 15px;
     background-color: #fff;
-    font: 14px;
+    font-size: 14px;
 }
 
 .singleNewsContainer #commentForm {
     display: flex;
-    font: 14px;
     flex-direction: column;
     gap: 15px;
 }
@@ -172,7 +164,7 @@
 
 .singleNewsContainer #commentAuthor:focus,
 .singleNewsContainer #commentBody:focus {
-    border-color: 28a745;
+    border-color: #28a745; /* Fixed color */
     outline: none;
     box-shadow: 0 0 5px rgb(12, 141, 29);
 }
@@ -193,40 +185,104 @@
 }
 
 .singleNewsContainer button:hover {
-    background-color: #28a745;;
+    background-color: #218838; 
 }
 
-@media (max-width: 600px) {
-    .singleNewsContainer {
-        padding: 15px;
+
+@media (max-width: 768px) {
+    .news-title-section h1 {
+        font-size: 19px;
     }
 
-    .singleNewsContainer #commentForm {
-        gap: 10px;
+    .news-title-section p {
+        font-size: 10px; 
+    }
+
+    .introduction {
+        
+        font-size: 12.5px; 
+        width: auto; 
+        margin: auto;
+    }
+
+    .slider-button {
+        font-size: 17px; 
+        padding: 8px; 
+    }
+
+    .news-card {
+        padding: 13px; 
+    }
+
+    .news-card h3 {
+        font-size: 12px; 
+    }
+
+    .news-card p {
+        font-size: 12px; 
+    }
+
+    .singleNewsContainer {
+        padding: 12px; 
+    }
+
+    .singleNewsContainer #newsTitle {
+        font-size: 12px; 
+    }
+
+    .singleNewsContainer #newsContent {
+        font-size: 12px; 
     }
 
     .singleNewsContainer button {
-        padding: 10px;
+        font-size: 12px; 
     }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 390px) {
     .news-title-section h1 {
-        font-size: 28px;
+        font-size: 22px; 
     }
 
-    .news-content p {
-        font-size: 16px;
+    .news-title-section p {
+        font-size: 12px; 
+    }
+
+    .introduction {
+        font-size: 14px; 
+        line-height: 1.4; 
+    }
+
+    .slider-button {
+        font-size: 18px; 
+        padding: 6px; 
+    }
+
+    .news-card {
+        padding: 10px; 
+    }
+
+    .news-card h3 {
+        font-size: 14px; 
+    }
+
+    .news-card p {
+        font-size: 12px; 
+    }
+
+    .singleNewsContainer {
+        padding: 10px; 
+    }
+
+    .singleNewsContainer #newsTitle {
+        font-size: 16px; 
+
+    .singleNewsContainer #newsContent {
+        font-size: 10px; 
+    }
+
+    .singleNewsContainer button {
+        font-size: 12px; 
     }
 }
-
-@media (max-width: 480px) {
-    .news-title-section h1 {
-        font-size: 24px;
-    }
-
-    .news-content p {
-        font-size: 14px;
-    }
 }

@@ -72,3 +72,20 @@ document.getElementById("prev").addEventListener("click", handlePrevPage);
 
 // Initial 
 fetchNews(currentPage);
+
+
+const hamburger = document.getElementById('hamburger');
+const nav = document.querySelector('nav');
+
+
+hamburger.addEventListener('click', () => {
+    // Toggle a class on the navigation menu to show/hide it
+    nav.classList.toggle('active'); // Add or remove 'active' class
+});
+
+
+document.addEventListener('click', (event) => {
+    if (!nav.contains(event.target) && !hamburger.contains(event.target)) {
+        nav.classList.remove('active'); // Close the menu
+    }
+});
