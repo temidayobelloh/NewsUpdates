@@ -67,6 +67,7 @@ nav a:hover {
 .hero-content h1 {
   font-size: 30px;
   margin-bottom: 30px;
+  margin-left: -92px;
 }
 
 .hero-content p {
@@ -77,22 +78,31 @@ nav a:hover {
   text-align: left;
 }
 
-.cta-button {
-  display: inline-block;
-  background-color: #28a745;
-  color: white;
-  padding: 13px 25px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 10px;
-  transition: background-color 0.3s, transform 0.3s;
-  margin-top: 10px;
+.button-container {
+  display: flex; /* Use Flexbox for alignment */
+  justify-content: flex-start; /* Align items to the left */
+  align-items: center; /* Vertically align */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  text-align: left;
+  padding: 1rem; /* Use padding for spacing */
+  max-width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding in width calculation */
+  margin-left: 200px;
 }
 
-.cta-button:hover {
-  background-color: #218838;
-  transform: translateY(-2px);
+.cta-button {
+  display: inline-block; /* Ensure it displays as a block */
+  background-color: #28a745; /* Button color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Adjust padding for visibility */
+  font-size: 1rem; /* Font size */
+  font-weight: 600; /* Font weight */
+  text-decoration: none; /* No underline */
+  border-radius: 10px; /* Rounded corners */
+  transition: background-color 0.3s, transform 0.3s; /* Transition effects */
+  margin-top: 10px; /* Margin for spacing */
+  max-width: 100%; /* Ensure it fits within the container */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
 /* News container styles */
@@ -205,7 +215,8 @@ nav a:hover {
 
 .footer-content p {
   margin: 0 auto;
-  font-size: 14px;
+  font-size: 15px;
+  text-align: center;
 }
 
 .footer-links {
@@ -224,8 +235,9 @@ nav a:hover {
 .footer-links li a {
   text-decoration: none;
   color: #28a745;
-  font-size: 0.9rem;
+  font-size: 15px;
   transition: color 0.3s ease;
+  
 }
 
 .footer-links li a:hover {
@@ -259,50 +271,56 @@ nav a:hover {
     padding: 12px;
   }
 
-  .cta-button {
-    margin-left: -486px;
-    padding: 10px;
-    font-size: 11px;
-    margin-bottom: 20px;
-  
+  .button-container {
+    padding: 0.5rem; /* Adjust padding if needed */
   }
-  .heading{
-    font-size:17px;
+
+  .cta-button {
+    padding: 8px 16px; /* Smaller padding on mobile */
+    font-size: 0.9rem; /* Smaller font size for mobile */
+  }
+
+  .heading {
+    font-size: 17px;
     margin: 0;
     padding: 15px;
   }
+
   .news-item {
-  
-    flex: 1 1 calc(33% - 2px); /* Two items per row on smaller screens */
+    flex: 1 1 calc(33% - 2px); 
   }
+
   .news-item h4 {
-    font-size: 13px; /* Reduced font size for headings */
-    padding: 0 15px; /* Adjust padding */
+    font-size: 13px; 
+    padding: 0 15px; 
   }
 
   .news-item p {
-    font-size: 13px; /* Reduced font size for paragraphs */
-    padding: 0 15px; /* Adjust padding */
+    font-size: 13px; 
+    padding: 0 15px; 
   }
-}
+
   .news-item a {
-    padding: 8px; /* Reduced padding */
-    font-size: 12px; /* Reduced font size */
-    margin: 8px 8px 12px 8px; /* Adjusted margins */
+    padding: 8px; 
+    font-size: 12px; 
+    margin: 8px 8px 12px 8px; 
   }
-  .footer-links a{
+
+  .footer-links a {
     flex-direction: row;
     align-items: center;
     gap: 8px;
   }
-  .footer-links li a{
+
+  .footer-links li a {
     font-size: 12px;
   }
+
   .footer-content p {
     font-size: 12px;
     text-align: center;
   }
-
+}
 
 /* Media query for screens up to 390px */
 @media (max-width: 390px) {
@@ -333,26 +351,39 @@ nav a:hover {
     font-size: 12px;
     text-align: center;
   }
-  @media (max-width: 390px) {
-    .news-item {
-      flex: 1 1 100%; /* One item per row on the smallest screens */
-    }
+
+  .news-item {
+    flex: 1 1 100%; 
   }
+
   .news-item h4 {
-    font-size: 14px; /* Further reduced font size for headings */
-    padding: 0 10px; /* Adjust padding */
+    font-size: 14px;
+    padding: 0 10px; 
   }
 
   .news-item p {
-    font-size: 12px; /* Further reduced font size for paragraphs */
-    padding: 0 10px; /* Adjust padding */
-  }
-  .footer-content p {
-    font-size: 10px;
+    font-size: 12px; 
+    padding: 0 10px; 
   }
 
-  .footer-links {
-    flex-direction: column;
-    gap: 6px;
+  .news-item a {
+    padding: 8px; 
+    font-size: 12px; 
+    margin: 8px 0; 
+  }
+
+  .footer-links a {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .footer-links li a {
+    font-size: 12px;
+  }
+
+  .footer-content p {
+    font-size: 10px;
+    text-align: center;
   }
 }
