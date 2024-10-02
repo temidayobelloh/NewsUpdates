@@ -144,7 +144,7 @@
     }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 300px) {
     .about-section,
     .features-section,
     .team-section {

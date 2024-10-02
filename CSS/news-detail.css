@@ -239,7 +239,7 @@
     }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 300px) {
     .news-title-section h1 {
         font-size: 22px; 
     }
