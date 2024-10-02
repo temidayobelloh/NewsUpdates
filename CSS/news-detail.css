@@ -1,0 +1,234 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Main Container */
+.main-container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* News Title Section */
+.news-title-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.news-title-section h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+.news-title-section p {
+    color: #666;
+    font-size: 16px;
+}
+
+.introduction {
+    font-size: 17px;
+    color: #555;
+    margin: 20px 0;
+    padding: 15px; 
+    line-height: 1.6;
+    text-align: left;
+    width: 900px;
+    font-weight: 500;
+    height: 130px;
+}
+
+
+.slider {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.news-card {
+    min-width: 330px; /* Minimum width for each card */
+    margin: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    height: 350px; /* Fixed height for uniformity */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    padding: 30px; /* Add padding inside the card */
+    box-sizing: border-box; /* Ensure padding is included in the height */
+}
+
+.news-card h3 {
+    margin: 5px 0; /* Smaller margin for title */
+    font-size: 18px; /* Adjust font size as needed */
+}
+
+.news-card p {
+    margin: 5px 0; /* Smaller margin for paragraph */
+    flex-grow: 1; /* Allows the paragraph to take up remaining space */
+    line-height: 1.5; /* Increase line-height for better readability */
+}
+
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: black; /* Make background transparent */
+    color: white; /* Change color of arrows */
+    border: 1px solid black; /* Remove default button border */
+    padding: 9px; /* Adjust padding for better click area */
+    cursor: pointer;
+    font-size: 24px; /* Increase font size for better visibility */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+    border-radius: 10px;
+}
+
+.slider-button:hover {
+    color: #28a745; /* Change color on hover */
+}
+
+
+#prevButton {
+    left: 10px;
+}
+
+#nextButton {
+    right: 10px;
+}
+.singleNewsContainer {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
+    box-sizing: border-box; /* Ensures padding and borders are included in total width */
+}
+
+.singleNewsContainer #newsTitle {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.singleNewsContainer img {
+    width: 70%; /* Makes the image take the full width of the container */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    margin: auto 0;
+    object-fit: cover; /* Adjust this based on how you want the image displayed */
+}
+
+.singleNewsContainer #newsContent {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.singleNewsContainer #commentSection {
+    margin-bottom: 20px;
+    font: 14px;
+}
+
+.singleNewsContainer .comment {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    font: 14px;
+}
+
+.singleNewsContainer #commentForm {
+    display: flex;
+    font: 14px;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.singleNewsContainer #commentAuthor,
+.singleNewsContainer #commentBody {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    transition: border-color 0.3s;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.singleNewsContainer #commentAuthor:focus,
+.singleNewsContainer #commentBody:focus {
+    border-color: 28a745;
+    outline: none;
+    box-shadow: 0 0 5px rgb(12, 141, 29);
+}
+
+.singleNewsContainer button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: flex-start;
+    margin-top: 10px;
+    width: 30%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.singleNewsContainer button:hover {
+    background-color: #28a745;;
+}
+
+@media (max-width: 600px) {
+    .singleNewsContainer {
+        padding: 15px;
+    }
+
+    .singleNewsContainer #commentForm {
+        gap: 10px;
+    }
+
+    .singleNewsContainer button {
+        padding: 10px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .news-title-section h1 {
+        font-size: 28px;
+    }
+
+    .news-content p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .news-title-section h1 {
+        font-size: 24px;
+    }
+
+    .news-content p {
+        font-size: 14px;
+    }
+}

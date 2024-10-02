@@ -1,131 +1,188 @@
-// Get the news ID from the URL parameters
-const urlParams = new URLSearchParams(window.location.search);
-const newsId = urlParams.get('id');
+const apiUrl = 'https://61924d4daeab5c0017105f1a.mockapi.io/skaet/v1/news';
+const sliderContainer = document.getElementById('sliderContainer');
+const prevButton = document.getElementById('prevButton');
+const nextButton = document.getElementById('nextButton');
+const newsDetailContainer = document.getElementById('newsDetailContainer');
+const commentSection = document.getElementById('commentSection');
+let currentSlide = 0;
+let newsItems = [];
 
-// Get references to HTML elements
-const newsDetailDiv = document.getElementById('news-detail');
-const commentsListDiv = document.getElementById('comments-list');
-const commentForm = document.getElementById('comment-form');
-const imageSliderDiv = document.getElementById('image-slider');
-
-// Fetch news details by ID
-async function fetchNewsDetail() {
+async function fetchNews(page = 1, limit = 5) {
     try {
-        const response = await fetch(`https://61924d4daeab5c0017105f1a.mockapi.io/skaet/v1/news/${newsId}`);
-        const newsDetail = await response.json();
-        displayNewsDetail(newsDetail);
+        const response = await fetch(`${apiUrl}?page=${page}&limit=${limit}`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return await response.json();
     } catch (error) {
-        console.error('Error fetching news detail:', error);
+        console.error('There was a problem with the fetch operation:', error);
     }
 }
 
-// Display news detail
-function displayNewsDetail(news) {
-    const newsHtml = `
-        <h1>${news.title}</h1>
-        <p>Author: ${news.author}</p>
-        <img src="${news.avatar}" alt="${news.title} thumbnail">
-        <a href="${news.url}" target="_blank">Read More</a>
-    `;
-    newsDetailDiv.innerHTML = newsHtml;
-
-    // Fetch and display images for the news
-    fetchNewsImages();
-}
-
-// Fetch images for the news
-async function fetchNewsImages() {
+async function fetchFullNews(id) {
     try {
-        const response = await fetch(`https://61924d4daeab5c0017105f1a.mockapi.io/skaet/v1/news/${newsId}/images`);
-        const images = await response.json();
-        displayImageSlider(images);
+        const response = await fetch(`${apiUrl}/${id}`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch full article');
+        }
+        return await response.json();
     } catch (error) {
-        console.error('Error fetching news images:', error);
+        console.error('There was a problem fetching the full article:', error);
     }
 }
 
-// Display image slider
-function displayImageSlider(images) {
-    const sliderHtml = images.map(image => `<img src="${image.image}" alt="News Image">`).join('');
-    imageSliderDiv.innerHTML = `<div class="slider">${sliderHtml}</div>`;
-}
-
-// Fetch comments for the news
-async function fetchComments() {
+async function fetchComments(newsId) {
     try {
-        const response = await fetch(`https://61924d4daeab5c0017105f1a.mockapi.io/skaet/v1/news/${newsId}/comments`);
-        const comments = await response.json();
-        displayComments(comments);
+        const response = await fetch(`${apiUrl}/${newsId}/comments`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch comments');
+        }
+        return await response.json();
     } catch (error) {
         console.error('Error fetching comments:', error);
     }
 }
 
-// Display comments
-function displayComments(comments) {
-    const commentsHtml = comments.map(comment => `
-        <div class="comment" data-id="${comment.id}">
-            <p><strong>${comment.name}:</strong> ${comment.comment}</p>
-            <button onclick="editComment('${comment.id}', '${comment.comment}')">Edit</button>
-            <button onclick="deleteComment('${comment.id}')">Delete</button>
-        </div>
-    `).join('');
-    commentsListDiv.innerHTML = commentsHtml;
+function displaySlider() {
+    sliderContainer.innerHTML = "";
+    newsItems.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'news-card';
+        card.innerHTML = `
+            <img src="${item.avatar}" alt="Avatar of ${item.author}">
+            <h3>${item.title}</h3>
+            <p>Author: ${item.author}</p>
+            <a href="#" class="read-more" data-id="${item.id}">Read more</a>
+        `;
+        sliderContainer.appendChild(card);
+    });
+    updateSlider();
 }
 
-// Add a new comment
-commentForm.addEventListener('submit', async (event) => {
-    event.preventDefault();
+async function displaySingleNews(newsId) {
+    const fullNews = await fetchFullNews(newsId);
     
-    const name = document.getElementById('comment-name').value;
-    const commentText = document.getElementById('comment-text').value;
-    const newComment = { newsId: newsId, name: name, comment: commentText };
+    newsDetailContainer.innerHTML = `
+        <img src="${fullNews.avatar}" alt="Avatar of ${fullNews.author}">
+        <h2>${fullNews.title}</h2>
+        <p>Author: ${fullNews.author}</p>
+        <p>${fullNews.content}</p>
+        <a href="${fullNews.url}" target="_blank">Read full article</a>
+    `;
+
+    const comments = await fetchComments(newsId);
+    displayComments(comments);
+
+    const commentForm = document.createElement('form');
+    commentForm.id = 'commentForm';
+
+    const authorInput = document.createElement('input');
+    authorInput.type = 'text';
+    authorInput.id = 'commentAuthor';
+    authorInput.placeholder = 'Your name';
+    authorInput.required = true;
+
+    const commentTextarea = document.createElement('textarea');
+    commentTextarea.id = 'commentBody';
+    commentTextarea.placeholder = 'Your comment';
+    commentTextarea.required = true;
+
+    const submitButton = document.createElement('button');
+    submitButton.type = 'submit';
+    submitButton.textContent = 'Add Comment';
+
+    commentForm.appendChild(authorInput);
+    commentForm.appendChild(commentTextarea);
+    commentForm.appendChild(submitButton);
     
-    try {
-        await fetch(`https://61924d4daeab5c0017105f1a.mockapi.io/skaet/v1/news/${newsId}/comments`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(newComment)
-        });
+    commentForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
         
-        fetchComments(); // Refresh comments
-        commentForm.reset(); // Reset form
+        const username = authorInput.value;
+        const userComment = commentTextarea.value;
+
+        if (username && userComment) {
+            const newComment = { name: username, content: userComment };
+            await postComment(newsId, newComment);
+            const updatedComments = await fetchComments(newsId);
+            displayComments(updatedComments);
+            commentForm.reset();
+        } else {
+            alert("Please enter both your name and comment.");
+        }
+    });
+
+    newsDetailContainer.appendChild(commentForm);
+}
+
+function displayComments(comments) {
+    commentSection.innerHTML = "";
+
+    if (comments.length > 0) {
+        comments.forEach(comment => {
+            const commentDiv = document.createElement('div');
+            commentDiv.className = 'comment';
+            commentDiv.innerHTML = `
+                <p><strong>${comment.name}:</strong> ${comment.content}</p>
+            `;
+            commentSection.appendChild(commentDiv);
+        });
+    } else {
+        const noCommentsMessage = document.createElement('p');
+        noCommentsMessage.textContent = "No existing comments.";
+        commentSection.appendChild(noCommentsMessage);
+    }
+}
+
+async function postComment(newsId, comment) {
+    try {
+        const response = await fetch(`${apiUrl}/${newsId}/comments`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(comment),
+        });
+        if (!response.ok) {
+            throw new Error('Error posting comment');
+        }
+        return await response.json();
     } catch (error) {
-        console.error('Error adding comment:', error);
+        console.error('Error posting comment:', error);
+    }
+}
+
+function updateSlider() {
+    const totalSlides = newsItems.length;
+    const slideWidth = document.querySelector('.news-card').offsetWidth;
+    sliderContainer.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+}
+
+prevButton.addEventListener('click', () => {
+    if (currentSlide > 0) {
+        currentSlide--;
+        updateSlider();
     }
 });
 
-// Edit a comment
-async function editComment(commentId, currentComment) {
-    const newCommentText = prompt('Edit your comment:', currentComment);
-    if (newCommentText) {
-        try {
-            await fetch(`https://61924d4daeab5c0017105f1a.mockapi.io/skaet/v1/news/${newsId}/comments/${commentId}`, {
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ comment: newCommentText })
-            });
-            fetchComments(); // Refresh comments
-        } catch (error) {
-            console.error('Error editing comment:', error);
-        }
+nextButton.addEventListener('click', () => {
+    if (currentSlide < newsItems.length - 1) {
+        currentSlide++;
+        updateSlider();
     }
+});
+
+sliderContainer.addEventListener('click', (event) => {
+    if (event.target.classList.contains('read-more')) {
+        event.preventDefault();
+        const newsId = event.target.dataset.id;
+        displaySingleNews(newsId);
+    }
+});
+
+async function init() {
+    newsItems = await fetchNews();
+    displaySlider();
 }
 
-// Delete a comment
-async function deleteComment(commentId) {
-    if (confirm('Are you sure you want to delete this comment?')) {
-        try {
-            await fetch(`https://61924d4daeab5c0017105f1a.mockapi.io/skaet/v1/news/${newsId}/comments/${commentId}`, {
-                method: 'DELETE'
-            });
-            fetchComments(); // Refresh comments
-        } catch (error) {
-            console.error('Error deleting comment:', error);
-        }
-    }
-}
-
-// Initial function calls
-fetchNewsDetail();
-fetchComments();
+init();

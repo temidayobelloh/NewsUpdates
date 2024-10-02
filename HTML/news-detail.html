@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Detail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/news-detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="news-detail.html">Latest News</a></li>
+                <li><a href="create-news.html">Create News</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <div class="main-container">
+
+        <!-- News Title Section -->
+        <div class="news-title-section">
+            <h1 id="news-title">Latest News Updates</h1>
+            <p id="news-author">By Author Name | Date Published</p>
+        </div>
+        <!-- Introduction Section -->
+
+    <p class=" introduction">Welcome to the news detail section! Here you can read the full article by clicking on  the <strong>Read More link</strong>. This will take you to the original source of the article. Feel free to share your thoughts and insights in the comments section below!</p>
+
+        <div class="slider">
+            <div class="slider-container" id="sliderContainer">
+                <!-- News cards will be injected here -->
+            </div>
+            <button class="slider-button" id="prevButton"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-button" id="nextButton"><i class="fas fa-chevron-right"></i></button>
+
+        </div>
+        <div class="singleNewsContainer" id="newsDetailContainer">
+            <h2 id="newsTitle">Get the full Articles below</h2>
+            <img id="newsImage" src="" alt="News Image">
+            <p id="newsContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div id="commentSection"></div>
+
+        <form id="commentForm">
+          
+        </form>
+    </div>
+    </div>
+    <footer class="footer"></footer>
+        <div class="footer-content">
+            <p>&copy; 2024 News App. All Rights Reserved.</p>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="news-detail.html">Latest News</a></li>
+                <li><a href="create-news.html">Create News</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+        </div>
+    </footer>
+    <script src="../JAVASCRIPT/news-details.js"></script>
+</body>
+</html>

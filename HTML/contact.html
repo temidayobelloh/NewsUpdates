@@ -15,6 +15,7 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
+            <li><a href="news-detail.html">Latest News</a></li>
             <li><a href="create-news.html">Create News</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact </a></li>
@@ -24,20 +25,22 @@
     <h1>Contact Us</h1>
     <div class="contact-description">
         <h2>We'd Love to Hear from You!</h2>
-        <p>If you have any questions, comments, or suggestions, please feel free to reach out to us. Your feedback is important to us and helps us improve our services. Fill out the form below and we'll get back to you as soon as possible!</p>
+        <p style="font-size: 17px; color: #555; margin: 20px 0; line-height: 1.6;">If you have any questions, comments, or suggestions, please feel free to reach out to us. Your feedback is important to us and helps us improve our services. Fill out the form below and we'll get back to you as soon as possible!</p>
+    
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+    
+            <button type="submit">Send Message</button>
+        </form>
     </div>
-    <form id="contact-form">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
-
-        <button type="submit">Send Message</button>
-    </form>
+    
 
     <button id="back-home" class="back-home-button">Back to Home Page</button>
     <div id="custom-alert" class="modal">
@@ -54,6 +57,7 @@
             <p>&copy; 2024 News App. All Rights Reserved.</p>
             <ul class="footer-links">
                 <li><a href="index.html">Home</a></li>
+                <li><a href="news-detail.html">Latest News</a></li>
                 <li><a href="create-news.html">Create News</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact Us</a></li>

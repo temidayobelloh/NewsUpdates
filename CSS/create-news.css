@@ -19,10 +19,11 @@ h1 {
   background-color: #ffffff; 
   border-radius: 10px; 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-  padding: 40px; 
+  padding: 50px; 
   margin: 20px auto; 
   max-width: 1100px; 
   height: auto; 
+
 }
 
 .intro-content p {
@@ -30,6 +31,8 @@ h1 {
   line-height: 1.6; 
   margin-bottom: 15px;
   color: #555; 
+  max-width: 1100px;
+  
 }
 
 
@@ -37,11 +40,12 @@ h1 {
 form {
   max-width: 550px;
   margin: 0 auto;
-  background: white;
+  background: rgb(185, 247, 179);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 60px 0 30px 100px; /* top right bottom left */
+  margin-left:8px;
+  margin-top: 40px;
 }
 
 form label {
