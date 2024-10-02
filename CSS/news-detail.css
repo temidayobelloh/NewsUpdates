@@ -241,29 +241,30 @@
 
 @media (max-width: 390px) {
     .news-title-section h1 {
-        font-size: 22px; 
+        font-size: 19px; 
     }
 
     .news-title-section p {
-        font-size: 12px; 
+        font-size: 9px; 
     }
 
     .introduction {
-        font-size: 14px; 
+        font-size: 11px; 
         line-height: 1.4; 
     }
 
     .slider-button {
         font-size: 18px; 
-        padding: 6px; 
+        padding: 5px; 
     }
 
     .news-card {
-        padding: 10px; 
+        padding: 15px;
     }
 
     .news-card h3 {
-        font-size: 14px; 
+        margin-top: 50px;
+        font-size: 12px; 
     }
 
     .news-card p {
@@ -271,18 +272,18 @@
     }
 
     .singleNewsContainer {
-        padding: 10px; 
+        padding: 45px 10px; 
     }
 
     .singleNewsContainer #newsTitle {
-        font-size: 16px; 
+        font-size: 9px; 
 
     .singleNewsContainer #newsContent {
-        font-size: 10px; 
+        font-size: 9px; 
     }
 
     .singleNewsContainer button {
-        font-size: 12px; 
+        font-size: 9px; 
     }
 }
 }

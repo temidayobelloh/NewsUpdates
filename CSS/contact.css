@@ -195,7 +195,7 @@ button:hover {
 
 @media (max-width: 390px) {
     h1 {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     form {
@@ -210,7 +210,7 @@ button:hover {
     form input,
     form textarea {
         padding: 8px;
-        font-size: 12px;
+        font-size: 11px;
     }
 
     button {
@@ -220,8 +220,9 @@ button:hover {
     }
 
     .back-home-button {
-        width: 90%;
+        width: 50%;
         height: 35px;
+        margin-left: 20px;
         padding: 8px 15px;
     }
 
@@ -230,10 +231,18 @@ button:hover {
     }
 
     .contact-description h2 {
-        font-size: 18px;
+        font-size: 13px;
+        text-align: center;
+        margin-right: 40px;
     }
 
     .contact-description p {
-        font-size: 12px;
+        font-size: 10px;
+        margin: 0;
+        padding: 0;
+        margin-left: 16px;
+        width: 250px;
+        height: 120px;
+
     }
 }
