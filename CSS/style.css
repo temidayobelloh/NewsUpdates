@@ -323,7 +323,7 @@ nav a:hover {
 }
 
 /* Media query for screens up to 390px */
-@media (max-width: 390px) {
+@media (max-width: 300px) {
   nav {
     padding: 2px;
   }
