@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <title>News App</title>
+</head>
+<body>
+    <header>
+          
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./HTML/news-detail.html">Latest News</a></li>
+                <li><a href="./HTML/create-news.html">Create News</a></li>
+                <li><a href="./HTML/about.html">About Us</a></li>
+                <li><a href="./HTML/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <hero class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to the News App</h1>
+            <p>Your go-to source for the latest news and articles. Stay informed, stay engaged!</p>
+            <p>Join our vibrant community of readers and writers who are passionate about sharing stories and insights from around the world. Whether you want to create your own articles, read the latest trends, or connect with other news enthusiasts, you’re in the right place!</p>
+            <p>Let us help you stay updated with real-time news feeds across various categories, ensuring you never miss out on important information.</p>
+            <div class="button-container"><a href="create-news.html" class="cta-button">Create Your First Article</a></div>
+        </div>
+    </hero>
+
+    <main>
+        <h1 class="heading">News Articles</h1>
+        <section id="news-list" class="news-container"></section>
+        
+        <div class="pagination">
+            <button id="prev">Back</button>
+            <span id="current-page" class="current-page">Page 1 of X</span>
+            <button id="next">Next</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 News App. All Rights Reserved.</p>
+            <ul class="footer-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./HTML/news-detail.html">Latest News</a></li>
+                <li><a href="./HTML/create-news.html">Create News</a></li>
+                <li><a href="./HTML/about.html">About Us</a></li>
+                <li><a href="./HTML/contact.html">Contact</a></li>
+
+            </ul>
+        </div>
+    </footer>
+
+    <script src="./JAVASCRIPT/app.js"></script>
+</body>
+</html>
