@@ -8,11 +8,18 @@
 h1 {
     text-align: center;
     margin-top: 20px;
-    color: #333;
+    color: black;
+    font-size: 30px;
 }
-
+.contact-text{
+    width: 550px;
+    margin: auto;
+    font-size: 15.5px;
+    margin-bottom: 0;
+}
 form {
-    max-width: 450px;
+    margin-top: 0;
+    max-width: 550px;
     margin: 60px auto 30px auto;
     padding: 20px;
     border: 1px solid #ddd;
@@ -31,7 +38,7 @@ form label {
 form input,
 form textarea {
     width: 100%;
-    padding: 12px;
+    padding: 15px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -64,7 +71,7 @@ button:hover {
 
 .back-home-button {
     margin-top: 30px;
-    margin-left: 470px;
+    margin-left: 350px;
     width: auto; 
     height: 45px;
     padding: 10px 30px; 
@@ -193,14 +200,19 @@ button:hover {
     }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 390px) {
     h1 {
-        font-size: 20px;
+        font-size: 17px;
+    }
+    .contact-text{
+        font-size: 11px;
+        width: 90%;
     }
 
     form {
         padding: 10px;
         margin: 20px auto;
+        width:90%;
     }
 
     form label {
@@ -214,26 +226,16 @@ button:hover {
     }
 
     button {
-        width: 100%;
+        width: 40%;
         padding: 10px;
         font-size: 12px;
     }
 
     .back-home-button {
-        width: 90%;
+        width: 45%;
         height: 35px;
         padding: 8px 15px;
+        margin-left: 10px;
     }
 
-    .contact-description {
-        padding: 20px;
-    }
-
-    .contact-description h2 {
-        font-size: 18px;
-    }
-
-    .contact-description p {
-        font-size: 12px;
-    }
 }

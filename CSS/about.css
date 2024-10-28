@@ -2,10 +2,10 @@
 .features-section,
 .team-section {
     text-align: left;
-    padding: 40px 20px;
+    padding: 20px 20px;
     background-color: #ffffff;
     max-width: 900px;
-    margin: 50px auto;
+    margin: 60px auto;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
     border-radius: 15px; 
 }
@@ -14,19 +14,20 @@
 .features-section h2,
 .team-section h2 {
     font-family: 'Montserrat', sans-serif; 
-    font-size: 25px; 
+    font-size: 22px; 
     color: #28a745;
-    margin-bottom: 20px;
     letter-spacing: 0.5px; 
-    text-align: left;
-    margin-left: 60px;
+    text-align: center;
     font-weight: 700;
+    padding: 7px;
+    margin: auto;
+
 }
 
 .about-content p,
 .features-list li {
-    font-size: 16px; 
-    color: #555;
+    font-size: 15px; 
+    color: black;
     margin-bottom: 15px; 
     line-height: 1.6; 
     padding: 0 15px; 
@@ -59,7 +60,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 205px; 
+    margin-left: 170px; 
     margin-bottom: 100px; 
     transition: background-color 0.3s, transform 0.3s; 
 }
@@ -79,8 +80,10 @@
 .team-member {
     text-align: center;
     width: 30%;
-    margin-bottom: 30px; 
+    margin-bottom: 20px; 
     transition: transform 0.3s;
+    padding: 0;
+    margin-top: 0;
 }
 
 .team-member:hover {
@@ -144,24 +147,26 @@
     }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 390px) {
     .about-section,
     .features-section,
     .team-section {
         padding: 20px 5px;
+        text-align: center;
     }
 
     .about-section h1,
     .features-section h2,
     .team-section h2 {
-        font-size: 20px; 
-        margin-left: 10px;
+        font-size:17px; 
+        text-align: left;
     }
 
     .about-content p,
     .features-list li {
         font-size: 12px; 
-        margin-left: 10px;
+        margin-left: 20px;
+        text-align: left;
     }
 
     #back-home {
@@ -171,15 +176,22 @@
     }
 
     .team-member {
-        width: 90%; 
+        width: 20%; 
         margin: 0 auto 20px; 
     }
 
     .team-member h3 {
-        font-size: 1rem; 
+        font-size: 12px; 
     }
 
     .team-member p {
-        font-size: 0.8rem; 
+        font-size: 11px; 
     }
+}
+#back-home {
+    margin-left: 0; 
+    width: 45%; 
+    margin-bottom: 30px; 
+    text-align: center; 
+    font-size: 12px;
 }

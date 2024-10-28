@@ -26,7 +26,6 @@ async function displaySingleNews(newsId) {
         <img src="${fullNews.avatar}" alt="${fullNews.author}">
         <h2>${fullNews.title}</h2>
         <p>Author: ${fullNews.author}</p>
-        <p>${fullNews.content}</p>
         <a href="${fullNews.url}" target="_blank">Read full article</a>
     `;
 

@@ -16,24 +16,27 @@
 }
 
 .news-title-section h1 {
-    font-size: 36px;
-    color: #333;
+    font-size: 30px;
+    color: black;
+    margin: 0;
+    padding: 0;
 }
 
 .news-title-section p {
-    color: #666;
+    color: black;
     font-size: 16px;
 }
 
 .introduction {
-    font-size: 17px;
-    color: #555;
-    margin: 20px 0;
-    padding: 15px; 
-    line-height: 1.6;
+    font-size: 16px;
+    color: black;
+    margin: 20px auto;
+    padding: 2px; 
+    line-height: 30px;
     text-align: left;
-    max-width: 900px; /* Updated to max-width for better responsiveness */
-    font-weight: 500;
+    max-width: 920px; 
+    margin-top: 0;
+    
 }
 
 .slider {
@@ -49,21 +52,21 @@
 }
 
 .news-card {
-    min-width: 300px; /* Adjusted for better responsiveness */
+    min-width: 300px; 
     margin: 10px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    height: 350px;
+    height: 300px;
     display: flex;
     flex-direction: column; 
-    padding: 20px; /* Adjusted padding */
+    padding: 20px;
 }
 
 .news-card h3 {
     margin: 5px 0; 
-    font-size: 18px; 
+    font-size: 14px; 
 }
 
 .news-card p {
@@ -76,20 +79,21 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: black; 
+    background-color: #28a745; 
     color: white; 
-    border: 1px solid black; 
-    padding: 10px; /* Adjusted padding */
+    padding: 2px; 
     cursor: pointer;
-    font-size: 24px;
+    font-size: 30px;
     transition: color 0.3s; 
     border-radius: 10px;
+    margin: 10px;
+    border: none;
 }
-
-.slider-button:hover {
-    color: #28a745; /* Change color on hover */
+.slider-arrow{
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
-
 #prevButton {
     left: 10px;
 }
@@ -239,43 +243,45 @@
     }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 390px) {
     .news-title-section h1 {
-        font-size: 22px; 
+        font-size: 16px; 
     }
 
     .news-title-section p {
-        font-size: 12px; 
+        font-size: 11px; 
+        
     }
 
     .introduction {
-        font-size: 14px; 
+        font-size: 11px; 
         line-height: 1.4; 
+        margin-bottom: 15px;
     }
 
     .slider-button {
-        font-size: 18px; 
-        padding: 6px; 
+        font-size: 16px; 
+        padding: 7px; 
     }
 
     .news-card {
-        padding: 10px; 
+        padding: 7px; 
     }
 
     .news-card h3 {
-        font-size: 14px; 
-    }
-
-    .news-card p {
         font-size: 12px; 
     }
 
+    .news-card p {
+        font-size: 11px; 
+    }
+
     .singleNewsContainer {
-        padding: 10px; 
+        padding: 18px; 
     }
 
     .singleNewsContainer #newsTitle {
-        font-size: 16px; 
+        font-size: 13px; 
 
     .singleNewsContainer #newsContent {
         font-size: 10px; 

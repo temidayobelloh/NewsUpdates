@@ -51,7 +51,7 @@ nav a:hover {
   text-align: left;
   padding-top: 60px;
   padding-bottom: 10px;
-  margin-left: 120px;
+  margin-left: 200px;
 }
 
 .hero {
@@ -62,11 +62,19 @@ nav a:hover {
   border-radius: 15px;
   margin: 20px auto;
 }
-
+.hero-content{
+  width: 100%;
+  max-width: 900px; 
+  margin: auto;
+  overflow: hidden;
+  padding: 20px; 
+}
 .hero-content h1 {
   font-size: 30px;
   margin-bottom: 0px;
   text-align: center;
+  color: black;
+  padding-top: 20px;
 }
 
 .hero-content p {
@@ -78,19 +86,11 @@ nav a:hover {
 }
 
 .button-container {
-  display: flex; 
-  justify-content: flex-start; 
-  align-items: center; 
-  flex-wrap: wrap; 
-  text-align: left;
-  max-width: 100%;
-  box-sizing: border-box;
-  margin-left: 150px;
-  padding: 0;
+  width: 40%;
 }
 
 .cta-button {
-  display: inline-block; 
+  display:block; 
   background-color: #28a745; 
   color: white; 
   padding: 10px 20px; 
@@ -100,7 +100,7 @@ nav a:hover {
   border-radius: 10px; 
   transition: background-color 0.3s, transform 0.3s; 
   margin-top: 10px;
-  max-width: 100%; 
+  max-width: 70%; 
   box-sizing: border-box; 
 }
 
@@ -238,7 +238,7 @@ nav a:hover {
 }
 
 .footer-links li a:hover {
-  color: #ccc;
+  color: #9f9d9d;
 }
 
 @media (max-width: 768px) {
@@ -269,6 +269,8 @@ nav a:hover {
 
   .button-container {
     padding: 0.5rem; 
+    margin-left: 20px;
+    width: 45%;
   }
 
   .cta-button {
@@ -318,47 +320,50 @@ nav a:hover {
   }
 }
 
-/* Media query for screens up to 390px */
-@media (max-width: 300px) {
+@media (max-width: 390px) {
   nav {
-    padding: 8px;
-  }
+    padding: 1px;
+    }
 
   nav ul li {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 12px;
+    display: inline;
+    font-size: 10px;
+    padding: 0;
   }
 
   .hero-content h1 {
-    font-size: 20px;
-    margin-left: 0;
+    font-size: 14px;
     text-align: center;
+    margin: auto;
+    padding-top: 0;
   }
 
   .hero-content p {
-    font-size: 12px;
+    font-size: 11px;
     width: auto;
     margin: 0 auto;
   }
-
+  .button-container{
+    width:75%;
+    margin: 0;
+  }
   .cta-button {
-    padding: 8px 15px;
-    font-size: 12px;
-    text-align: center;
+    font-size: 10px;
+    text-align: left;
+    width:100%;
   }
 
   .news-item {
-    flex: 1 1 100%; 
+    flex: 10 10 55%; 
   }
 
   .news-item h4 {
-    font-size: 14px;
+    font-size: 11px;
     padding: 0 10px; 
   }
 
   .news-item p {
-    font-size: 12px; 
+    font-size: 11px; 
     padding: 0 10px; 
   }
 
@@ -375,11 +380,41 @@ nav a:hover {
   }
 
   .footer-links li a {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .footer-content p {
     font-size: 10px;
     text-align: center;
+    margin-top: 5px;
   }
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 11px;
+}
+
+.pagination button {
+  padding: 10px;
+  margin: 0 10px;
+  background-color: #28A745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #1d8335;
+}
+
+.pagination span {
+  font-size: 11px;
+  font-weight: bold;
+  color: #333;
 }
