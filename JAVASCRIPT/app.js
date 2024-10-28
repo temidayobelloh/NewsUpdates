@@ -11,7 +11,7 @@ async function fetchNews(page) {
         }
 
         const news = await response.json();
-        const totalItems = response.headers.get('X-Total-Count') || 170;
+        const totalItems = response.headers.get('X-Total-Count') || 100;
         totalPages = Math.ceil(totalItems / 10);
 
         displayNews(news);

@@ -13,7 +13,6 @@ body {
   padding-top: 70px;
 }
 
-/* Navigation styles */
 nav {
   background-color: #343A40;
   color: white;
@@ -48,16 +47,16 @@ nav a {
 nav a:hover {
   color: #28A745;
 }
-
 .heading {
-  margin-left: 105px;
-  padding-top: 40px;
-  padding-bottom: 20px;
+  text-align: left;
+  padding-top: 60px;
+  padding-bottom: 10px;
+  margin-left: 120px;
 }
 
-.hero-section {
+.hero {
   color: black;
-  padding-top: 2px;
+  padding-top: 0;
   text-align: center;
   position: relative;
   border-radius: 15px;
@@ -66,8 +65,8 @@ nav a:hover {
 
 .hero-content h1 {
   font-size: 30px;
-  margin-bottom: 30px;
-  margin-left: -92px;
+  margin-bottom: 0px;
+  text-align: center;
 }
 
 .hero-content p {
@@ -79,39 +78,38 @@ nav a:hover {
 }
 
 .button-container {
-  display: flex; /* Use Flexbox for alignment */
-  justify-content: flex-start; /* Align items to the left */
-  align-items: center; /* Vertically align */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  display: flex; 
+  justify-content: flex-start; 
+  align-items: center; 
+  flex-wrap: wrap; 
   text-align: left;
-  padding: 1rem; /* Use padding for spacing */
-  max-width: 100%; /* Full width */
-  box-sizing: border-box; /* Include padding in width calculation */
-  margin-left: 200px;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-left: 150px;
+  padding: 0;
 }
 
 .cta-button {
-  display: inline-block; /* Ensure it displays as a block */
-  background-color: #28a745; /* Button color */
-  color: white; /* Text color */
-  padding: 10px 20px; /* Adjust padding for visibility */
-  font-size: 1rem; /* Font size */
-  font-weight: 600; /* Font weight */
-  text-decoration: none; /* No underline */
-  border-radius: 10px; /* Rounded corners */
-  transition: background-color 0.3s, transform 0.3s; /* Transition effects */
-  margin-top: 10px; /* Margin for spacing */
-  max-width: 100%; /* Ensure it fits within the container */
-  box-sizing: border-box; /* Include padding in width calculation */
+  display: inline-block; 
+  background-color: #28a745; 
+  color: white; 
+  padding: 10px 20px; 
+  font-size: 16px;
+  font-weight: 600; 
+  text-decoration: none; 
+  border-radius: 10px; 
+  transition: background-color 0.3s, transform 0.3s; 
+  margin-top: 10px;
+  max-width: 100%; 
+  box-sizing: border-box; 
 }
 
-/* News container styles */
 .news-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -171,13 +169,12 @@ nav a:hover {
   background-color: #1d8335;
 }
 
-/* Pagination styles */
 .pagination {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
-  margin-bottom: 70px;
+  margin-bottom: 20px;
 }
 
 .pagination button {
@@ -244,7 +241,6 @@ nav a:hover {
   color: #ccc;
 }
 
-/* Media query for screens up to 768px */
 @media (max-width: 768px) {
   nav {
     padding: 10px;
@@ -272,12 +268,12 @@ nav a:hover {
   }
 
   .button-container {
-    padding: 0.5rem; /* Adjust padding if needed */
+    padding: 0.5rem; 
   }
 
   .cta-button {
-    padding: 8px 16px; /* Smaller padding on mobile */
-    font-size: 0.9rem; /* Smaller font size for mobile */
+    padding: 8px 16px;
+    font-size: 0.9rem; 
   }
 
   .heading {
